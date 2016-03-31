@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<h1> Help us choose your next Travel Destination! </h1>
+<form name="adventure" action="success.html" method="post">
+  <fieldset>
+    <div>
+      <label>Full name:</label>
+      <input type="text" name="fullname">
+    </div>
+
+    <div>
+      <label>Email:</label>
+      <input type="email" name="email">
+    </div>
+
+    
+  </fieldset>
+
+  <fieldset>
+   
+
+    <div>
+      <label>City you want to visit :</label>
+      <select name="city">
+        <option value="Paris">Paris</option>
+        <option value="Tokyo">Tokyo</option>
+        <option value="Singapore">Singapore</option>
+      </select>
+    </div>
+ 
+    <div>    
+      <label>Choose a date:</label>
+      <input type="date" name="date">
+    </div>
+
+    <div>
+      <input type="checkbox" name="cb-agree" value="agree">
+      Are you prepared to travel now?
+    </div>
+  </fieldset>
+  <fieldset>  
+    <p> Tell us why you want to visit this city!</p>  
+    <p><textarea class="noscrollbars" onkeyup="autoGrow(this);"></textarea></p>
+    
+  </fieldset>
+  <fieldset>
+  	<div>
+      <label>Choose your Gender:</label> <br>
+      <input type="radio" name="gender" value="male" checked> Male<br>
+  <input type="radio" name="gender" value="female"> Female<br>
+  <input type="radio" name="gender" value="other"> Other 
+    </div>
+    <br>
+    <div>
+      <label>Pick Your Week:</label>
+      <input type="week" name="pick your week">
+    </div>
+    <br>
+    <div>
+      <label>Input your phone number:</label>
+      <input type="tel" name="Input your phone number">
+    </div>
+  </fieldset>
+  
+  <button type="submit">Save this adventure</button>
+</form>	
+</body>
+</html>

@@ -1,0 +1,9 @@
+#contact-info{font-size: .8em}
+.job {background-color: #e9e5dc;
+      border-radius: 75px;
+      padding: 50px;
+      margin-top: 50px;
+      margin-bottom: 50px}
+.small{font-size: .8em}
+h3:nth-child(1) {background: red;}
+li::first-letter {color: blue}

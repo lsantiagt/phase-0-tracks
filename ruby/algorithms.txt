@@ -1,0 +1,17 @@
+Enter the elevator when door opens
+one step in the elevator turn left until wall is reached
+turn left to the adjacent wall
+will find a panel with bottoms, find the lower row
+the first bottom to the left is the one for floor 1,
+the botton to the right is the one for floor 2,
+the next botton is for floor 3,
+the next row (row on top of first line)
+first botton to the left is for the floor of the botton under it + 3
+same for every bottom on th panel from row2 up until the top.
+
+Travel to Work
+Open Car, start it up, travel west on Via Horizonte for .3 miles,
+then travel north on 177 for .5 miles, make a right on 873 and
+travel east for 3.2 miles,
+then make left and travel north on 26 Ave for 10.2 miles. make a right
+at the entrance of Pico Center 120, park on the 3rd parking to the left.

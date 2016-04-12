@@ -1,1 +1,21 @@
-* {background-color: blue}
+* {background-image: url("https://octodex.github.com/images/snowoctocat.png");
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: 20%;
+   background-position: center;}
+
+.column-1{width: 50%;
+          color: green;
+          font-family: cursive;
+          }
+          
+.column-2{width: 49%;
+          color: blue;
+          font-family: Verona;
+          }
+header {background-color: #bdc3c7}
+footer {background-color: #bdc3c7;
+        padding:  20px;}
+section {
+         display: inline-block;
+         vertical-align: top;

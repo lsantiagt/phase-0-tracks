@@ -7,25 +7,22 @@ def next_vowel(n1)
    vlist = 'aeiou'.chars
    #p vlist
    newval = ""
-   for x in 0..n1.length.to_i - 1  
-
-       if vlist.include? n1[x]
+   n1.each do |letter|  
+       if vlist.include? letter
        	       #p vlist.index(n1[x])
        	       #p vlist.size
-            if vlist.index(n1[x]) == vlist.size - 1
+            if vlist.index(letter) == vlist.size - 1
             newval << vlist[0] 
             else
-            newval << vlist[vlist.index(n1[x]) + 1]       
-            end
-          
+            newval << vlist[vlist.index(letter) + 1]       
+            end          
         else
-          if n1[x] == nil
+          if letter == nil
           	 newval << " "
           else	 
-             newval << n1[x]
+             newval << letter
           end
        end
-       x += 1
    end
    return newval
 end

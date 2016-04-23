@@ -67,6 +67,7 @@ while vexit == 1 do
 	    agent_alias = next_cons(agent_alias)
 		alias_list << agent_alias
 
+
     end
    
 end

@@ -47,6 +47,7 @@ end
 
 agent_list = []
 alias_list = []
+l_alias_agent = Hash.new { [] }
 vexit = 1
 while vexit == 1 do
 	
@@ -59,19 +60,13 @@ while vexit == 1 do
     else   
 	    name = inname.split(' ')
 		name = name[-1] + " " + name[0]
-		p name
 		
-	    agent_list << name
 		agent_alias = next_vowel(name.chars)
-		
-	    agent_alias = next_cons(agent_alias)
-		alias_list << agent_alias
+    agent_alias = next_cons(agent_alias)
+	  l_alias_agent.merge!(name => agent_alias)
 
-
-    end
-   
+    end   
 end
 # Print all inputs
-for i in 0..agent_list.size - 1
-      puts "#{agent_list[i]} is also known as #{alias_list[i]}"
-end
+
+l_alias_agent.each {|key, value| puts "#{key} is also known as #{value}"}

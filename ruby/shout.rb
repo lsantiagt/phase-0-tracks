@@ -22,11 +22,14 @@ module Shout
   end
 end
 
-class Emotions
+class Partyemotions
+  include Shout
+end
+
+class Loosingemotions
   include Shout
 end
 
 
-
-puts Emotions.new.yell_angrily("Stop yelling at me!")
-puts Emotions.new.yell_hapilly("Let's party on tonight")
+puts Loosingemotions.new.yell_angrily("Stop yelling at me!")
+puts Partyemotions.new.yell_hapilly("Let's party on tonight")

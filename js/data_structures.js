@@ -1,5 +1,6 @@
 // Data Structures in JS
 // Variable definition
+
 var colors = ["blue","black","white","platinado"];
 var horse_name = ["Ed","Marilyn","Quinto Centernario","San Pedro"];
 var horses = {};

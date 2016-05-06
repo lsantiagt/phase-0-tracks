@@ -12,7 +12,7 @@ function longest_word(word_array) {
 	}
     // 2
     for (var i = 0; i < word_array.length; i++) {
-    	if (word_array[i].length == max_word_length)  {console.log("Longest Word in the array is "+word_array[i]+".");}
+    	if (word_array[i].length == max_word_length)  {console.log("Longest Word in the array   ["+ word_array+"]   is "+word_array[i]+". ");}
     }
 }
 
@@ -26,6 +26,7 @@ function longest_word(word_array) {
 function check_keyval(hash1, hash2) {
 	
 	var v_exists = 0;
+
 	Object.keys(hash1).forEach(function(key, index) {
 	       //console.log(this[key]+key);
 	       // 1 
@@ -54,13 +55,15 @@ function gen_words_array(num_words) {
     var array_words =[];
 
     for (var i = 0; i < num_words; i++) {
-    	console.log(i);
-         num_letters =  Math.floor(Math.random() * (10));
+    	//console.log(i);
+         num_letters =  Math.floor(Math.random() * (10) + 1);
+         //console.log(num_letters);
          for (var x= 0; x < num_letters; x++) {
          	ramdom_letter = 
          	word +=  possible_char.substr( Math.floor(Math.random() * (61)), 1);
          }
          array_words.push(word);
+         word = "";
     }
     return array_words;
 }
@@ -89,8 +92,24 @@ console.log(hash2)
 console.log(hash3)
 console.log("First result is " + check_results);
 
+console.log("");
 
-console.log( Math.floor(Math.random() * 9));
-
-
+//Gen Array
 console.log(gen_words_array(3));
+
+// execute 10 times the generation of the word array and gets the longest word. 
+for (var i = 1; i < 10; i++) {
+    longest_word(gen_words_array(3));
+}
+
+// This is sample output of the previous execution
+// Longest Word in the array   [st,onhH,EnEO4JiE]   is EnEO4JiE.
+// Longest Word in the array   [t1uhxhcND,elK3B,DaNpjqeEnU]   is DaNpjqeEnU.
+// Longest Word in the array   [aU,4sGk66,b3OjJ8m]   is b3OjJ8m.
+// Longest Word in the array   [l,nk4,l1ELXob4q]   is l1ELXob4q.
+// Longest Word in the array   [iue7q,Qvna,i6sbqL]   is i6sbqL.
+// Longest Word in the array   [L12BhSsH,fxFna7spGY,L]   is fxFna7spGY.
+// Longest Word in the array   [eggDzSjyS,fxjL8FQ,MFtj3IGrz]   is eggDzSjyS.
+// Longest Word in the array   [eggDzSjyS,fxjL8FQ,MFtj3IGrz]   is MFtj3IGrz.
+// Longest Word in the array   [tyg,CUxr,TkrHUPP]   is TkrHUPP.
+// Longest Word in the array   [i7r,nN8HLG5,pb]   is nN8HLG5.

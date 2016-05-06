@@ -26,6 +26,7 @@ function longest_word(word_array) {
 function check_keyval(hash1, hash2) {
 	
 	var v_exists = 0;
+	
 	Object.keys(hash1).forEach(function(key, index) {
 	       //console.log(this[key]+key);
 	       // 1 

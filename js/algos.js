@@ -32,17 +32,37 @@ function check_keyval(hash1, hash2) {
 	        Object.keys(hash2).forEach(function(key2, index2) {
 	            // 2
 	            if (hash1[key]+key == hash2[key2]+key2)  {
-	               console.log("True: " + hash1[key]+key + " " + hash2[key2]+key2);
+	               //console.log("True: " + hash1[key]+key + " " + hash2[key2]+key2);
 	               v_exists =  v_exists + 1;
 	            }   
-	            else {
-	            	console.log("False: "  + hash1[key]+key + " "  + hash2[key2]+key2);
-	            }
 	        },hash1)
-
 	  });
 	//3
      if (v_exists > 0) {return true;} else {return false;}
+}
+
+// Write a function that takes integer (length)
+// Return an array with the length specified on the input
+// 1. Define a variable with posible letters
+// 2. Identify how to build a ramdon word using posible letters using a ramdom length up to 10 characters
+// 3. build the array with words generated
+
+function gen_words_array(num_words) {    
+
+	var word = "";
+    var possible_char = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    var array_words =[];
+
+    for (var i = 0; i < num_words; i++) {
+    	console.log(i);
+         num_letters =  Math.floor(Math.random() * (10));
+         for (var x= 0; x < num_letters; x++) {
+         	ramdom_letter = 
+         	word +=  possible_char.substr( Math.floor(Math.random() * (61)), 1);
+         }
+         array_words.push(word);
+    }
+    return array_words;
 }
 
 
@@ -53,12 +73,24 @@ var hash1={name: "Steven", age: 54, country: "USA"};
 var hash2={name: "Tamir", age: 54};
 var hash3={name: "Luis", age: 53, country: "USA"};
 var check_results = null;
-console.log("");
+console.log(" ");
 check_results = check_keyval(hash1, hash2);
+console.log(hash1)
+console.log(hash2)
 console.log("First result is " + check_results );
 console.log("");
 check_results = check_keyval(hash1, hash3);
+console.log(hash1)
+console.log(hash3)
 console.log("First result is " + check_results);
 console.log("");
 check_results = check_keyval(hash2, hash3);
+console.log(hash2)
+console.log(hash3)
 console.log("First result is " + check_results);
+
+
+console.log( Math.floor(Math.random() * 9));
+
+
+console.log(gen_words_array(3));

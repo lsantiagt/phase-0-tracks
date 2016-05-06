@@ -6,6 +6,7 @@
 // insert into a new variable and continue appending to it
 
 //Variables
+
 var i = 0;
 var newstr = "";
 var reversedword = "";

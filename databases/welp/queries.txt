@@ -40,5 +40,13 @@ insert into reviews (stars, comment, business_id, user_id) values(2, "Too Slow",
 insert into reviews (stars, comment, business_id, user_id) values(5, "Excelent Service", 1, 4);  
 insert into reviews (stars, comment, business_id, user_id) values(5, "Excelent Service", 1, 2);  
 insert into reviews (stars, comment, business_id, user_id) values(5, "Ultra Fast Service", 2, 1);  
-   
-   
+
+-- Join 3 tables   
+select * from users, business, reviews where reviews.user_id = users.id and reviews.business_id = business.id;   
+
+-- Join and view just business, name and star rating and comment
+select users.firstname, users.lastname, business.name, stars, comment from users, business, reviews where reviews.user_id = users.id and reviews.business_id = business.id; 
+
+--How do you view the data of all three tables for just one particular business? 
+
+select * from users, business, reviews where reviews.user_id = users.id and reviews.business_id = business.id and business.name = "El Camaron";

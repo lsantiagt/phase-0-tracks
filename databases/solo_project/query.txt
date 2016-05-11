@@ -1,0 +1,134 @@
+Create statements for tables
+
+ create table employee( 
+   id integer primary key, 
+   department varchar2(20),
+   name varchar2(100), 
+   lastname varchar2(100),  
+   hired_date date,
+   active boolean);
+   
+ create table timecard( 
+   id integer primary key, 
+   employeeid integer ,
+   timedate date, 
+   description varchar2(255),  
+   projectnum varchar2(15),
+   hours integer,
+   FOREIGN KEY(employeeid) REFERENCES employee(id)  );
+
+Insert statements
+-- Employee
+
+insert into employee (department, name, lastname, hired_date, active) values ( "Accounting", "Jessica","Rodriguez",'12/26/2015', 1);
+insert into employee (department, name, lastname, hired_date, active) values ( "Accounting", "Mariela","Estrada",'7/26/2008', 1);
+insert into employee (department, name, lastname, hired_date, active) values ( "Human Resources", "Maria","Cintron",'5/30/2004', 1);
+insert into employee (department, name, lastname, hired_date, active) values ( "Accounting", "Yamilet","Diaz",'8/6/2013', 0);
+insert into employee (department, name, lastname, hired_date, active) values ( "Consulting", "Miguel","Torres",'11/7/2006', 1);
+insert into employee (department, name, lastname, hired_date, active) values ( "Consulting", "Jose","Maldonado",'7/23/2012', 1);
+insert into employee (department, name, lastname, hired_date, active) values ( "Consulting", "Margarita","Torres",'2/2/2003', 1);
+
+--Timecard
+   
+insert into timecard (employeeid, timedate, projectnum, description, hours) values (1, '5/10/2016',"Internal","Description for today's work",8);   
+insert into timecard (employeeid, timedate, projectnum, description, hours) values (2, '5/10/2016',"Internal","Description for today's work",8);
+insert into timecard (employeeid, timedate, projectnum, description, hours) values (3, '5/10/2016',"Internal","Description for today's work",8);
+insert into timecard (employeeid, timedate, projectnum, description, hours) values (4, '5/10/2016',"Internal","Description for today's work",8);
+insert into timecard (employeeid, timedate, projectnum, description, hours) values (5, '5/10/2016',"PJ01","Description for today's work",8);
+insert into timecard (employeeid, timedate, projectnum, description, hours) values (6, '5/10/2016',"PJ02","Description for today's work",4);
+insert into timecard (employeeid, timedate, projectnum, description, hours) values (6, '5/10/2016',"PJ04","Description for today's work",2);
+insert into timecard (employeeid, timedate, projectnum, description, hours) values (6, '5/10/2016',"PJ02","Description for today's work",2);
+insert into timecard (employeeid, timedate, projectnum, description, hours) values (7, '5/10/2016',"PJ03","Description for today's work",8);
+insert into timecard (employeeid, timedate, projectnum, description, hours) values (7, '5/10/2016',"PJ03","Description for today's work",8);   
+
+Queries
+
+--Display the information in one table (either table is fine).
+select department, name from employee;
+
+--Update an item that meets some condition (you can choose a condition that --makes sense).
+update timecard set description="Description for project PJ04" where projectnum="PJ04";
+
+--Display the information in both tables using one query.
+select * from employee emp, timecard t where emp.id = t.employeeid ;
+
+--Display a narrower selection of columns (fewer columns than all of them, in --other words) from both tables using one query.
+
+select emp.department,  emp.name, t.projectnum, t.timedate, t.hours from employee emp, timecard t where emp.id = t.employeeid order by emp.department;
+
+--Delete an item that meets some condition (you can choose a condition that makes sense).
+
+delete from timecard where projectnum = "PJ02"
+
+--Try a few different joins in your database, and record the commands
+-- CROSS JOINS
+select name, department, hours from employee cross join timecard;
+Jessica|Accounting|8
+Jessica|Accounting|8
+Jessica|Accounting|8
+Jessica|Accounting|8
+Jessica|Accounting|8
+Jessica|Accounting|2
+Jessica|Accounting|8
+Jessica|Accounting|8
+Mariela|Accounting|8
+Mariela|Accounting|8
+Mariela|Accounting|8
+Mariela|Accounting|8
+Mariela|Accounting|8
+Mariela|Accounting|2
+Mariela|Accounting|8
+Mariela|Accounting|8
+Maria|Human Resources|8
+Maria|Human Resources|8
+Maria|Human Resources|8
+Maria|Human Resources|8
+Maria|Human Resources|8
+Maria|Human Resources|2
+Maria|Human Resources|8
+Maria|Human Resources|8
+Yamilet|Accounting|8
+Yamilet|Accounting|8
+Yamilet|Accounting|8
+Yamilet|Accounting|8
+Yamilet|Accounting|8
+Yamilet|Accounting|2
+Yamilet|Accounting|8
+Yamilet|Accounting|8
+Miguel|Consulting|8
+Miguel|Consulting|8
+Miguel|Consulting|8
+Miguel|Consulting|8
+Miguel|Consulting|8
+Miguel|Consulting|2
+Miguel|Consulting|8
+Miguel|Consulting|8
+Jose|Consulting|8
+Jose|Consulting|8
+Jose|Consulting|8
+Jose|Consulting|8
+Jose|Consulting|8
+Jose|Consulting|2
+Jose|Consulting|8
+Jose|Consulting|8
+Margarita|Consulting|8
+Margarita|Consulting|8
+Margarita|Consulting|8
+Margarita|Consulting|8
+Margarita|Consulting|8
+Margarita|Consulting|2
+Margarita|Consulting|8
+Margarita|Consulting|8
+
+-- INNER JOIN
+select name, department, hours from employee inner join timecard on employee.id = timecard.id;
+
+Jessica|Accounting|8
+Mariela|Accounting|8
+Maria|Human Resources|8
+Yamilet|Accounting|8
+Miguel|Consulting|8
+Margarita|Consulting|2
+
+--OUTER JOIN
+Not able to show since the relation between two tables have a FK a record without a link is not allowed.

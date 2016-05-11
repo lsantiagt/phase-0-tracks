@@ -1,0 +1,44 @@
+-- Create table Business and data
+create table business( 
+   id integer primary key, 
+   name varchar2(100));
+
+insert into business (name) values ("El Camaron");
+insert into business (name) values ("Carmen");
+insert into business (name) values ("Pelayo");
+insert into business (name) values ("Gallo Negro");
+
+-- Create table users and data   
+ create table users( 
+   id integer primary key, 
+   firstname varchar2(100),
+   Lastname  varchar2(100));
+ 
+insert into users (firstname, lastname) values ("Bradford","Pitt"); 
+insert into users (firstname, lastname) values ("Mandy","Kailing"); 
+insert into users (firstname, lastname) values ("Angela","Jolie"); 
+insert into users (firstname, lastname) values ("Steven","Wonder"); 
+insert into users (firstname, lastname) values ("Holly","Berry"); 
+insert into users (firstname, lastname) values ("Merryl","Streepman"); 
+insert into users (firstname, lastname) values ("Luis","Santiago"); 
+ 
+--- Create table reviews and data
+ 
+create table reviews (
+   id integer primary key,
+   stars integer,
+   comment varchar2(255),
+   business_id integer,
+   user_id, integer,
+   FOREIGN KEY(user_id) REFERENCES users(id),
+   FOREIGN KEY(business_id) REFERENCES business(id));
+   
+insert into reviews (stars, comment, business_id, user_id) values(5, "Excelent Service", 1, 1);  
+insert into reviews (stars, comment, business_id, user_id) values(4, "Good Service, very clean", 4, 1);  
+insert into reviews (stars, comment, business_id, user_id) values(5, "Excelent Service", 3, 3);  
+insert into reviews (stars, comment, business_id, user_id) values(2, "Too Slow", 4, 4);  
+insert into reviews (stars, comment, business_id, user_id) values(5, "Excelent Service", 1, 4);  
+insert into reviews (stars, comment, business_id, user_id) values(5, "Excelent Service", 1, 2);  
+insert into reviews (stars, comment, business_id, user_id) values(5, "Ultra Fast Service", 2, 1);  
+   
+   

@@ -25,6 +25,8 @@ def create_phonelist(db, name, cellphone)
   db.execute("INSERT INTO phonelist (name, cellphone) VALUES (?, ?)", [name, cellphone])
 end
 
+# Define method to list the phone list stored on the db
+
 def list_phonelist(db)
     plist = db.execute("select * from phonelist")
     #puts plist.class
@@ -35,9 +37,13 @@ def list_phonelist(db)
     end
 end
 
+# Define method to update a phone for an employee
+
 def update_phone(db, name, cellphone)
     db.execute("UPDATE phonelist set cellphone = ? where name = ?", [cellphone,name])
 end
+
+# Method to get the phone from an employee and return false if not found
 
 def get_phone(db, name)
 	plist = db.execute("SELECT * from phonelist where name = ? ", [name])
@@ -49,6 +55,8 @@ def get_phone(db, name)
 	end
 	return true
 end
+
+# Method to delete an employee phone from list
 
 def del_phone(db, name)
     

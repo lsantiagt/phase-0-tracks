@@ -14,6 +14,8 @@ showPicture();
 
 //click on the button to hide the picture
 function hidePicture(event) {
+	console.log(event);
+	console.log("Hide Button call to JS");
 	document.getElementById("track").hidden = true;
 	document.getElementById("hide-button").hidden = true; 
 	document.getElementById("show-button").hidden = false; 
@@ -25,6 +27,8 @@ clickButton.addEventListener("click", hidePicture);
 
 //click on the button to show the picture
 function showPicture(event) {
+	console.log(event);
+	console.log("Show Button call to JS");
 	document.getElementById("track").hidden = false;
 	document.getElementById("show-button").hidden = true;
 	document.getElementById("hide-button").hidden = false;  

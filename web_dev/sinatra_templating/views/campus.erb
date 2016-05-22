@@ -1,0 +1,14 @@
+<html>
+<head>
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <ul>
+    <h2>These are the students in the <%= params['campus'] %> campus</h2>
+    <% @students.each do |student| %>
+      <li><%= student['name'] %></li>
+    <% end %>
+  </ul>
+</body>
+</html>
